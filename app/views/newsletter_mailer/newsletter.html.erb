@@ -1,0 +1,9 @@
+<%= @newsletter.title %>
+<br>
+<%= @newsletter.description %>
+
+<% @newsletter.reload.articles.each do |article| %>
+  <%= article.title %> <br>
+  <%= article.url %> <br>
+  <%= article.description %> <br>
+<% end %>

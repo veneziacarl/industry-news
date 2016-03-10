@@ -1,0 +1,12 @@
+Add to Mailing List
+
+<%= form_for @contact do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Me!" %>
+  </div>
+<% end %>
