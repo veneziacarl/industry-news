@@ -12,7 +12,7 @@ FEEDS = [
   { name: "The Weed Blog", link: "https://feeds.feedburner.com/TheWeedBlogcom" },
   { name: "Dope Magazine", link: "http://www.dopemagazine.com/feed/" },
   { name: "New Cannabis Ventures", link: "https://www.newcannabisventures.com/feed/" },
-  # { name: "Ganjapreneur", link: "http://www.ganjapreneur.com/feed/" },
+  { name: "Ganjapreneur", link: "http://www.ganjapreneur.com/feed/" },
   { name: "Cannabis-Chronicles", link: "http://cannabis-chronicles.com/feed/" },
   { name: "Cashinbis", link: "https://feeds.feedburner.com/cashinbis" },
   { name: "Marijuana", link: "http://www.marijuana.com/feed/" }
