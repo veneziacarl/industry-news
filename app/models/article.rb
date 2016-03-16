@@ -6,6 +6,7 @@ class Article < ActiveRecord::Base
   has_many :newsletter_articles
   has_many :newsletters, through: :newsletter_articles
   belongs_to :newsletter_feed
+  belongs_to :category
 
   validates :article_date, presence: true
   validates :title, presence: true
