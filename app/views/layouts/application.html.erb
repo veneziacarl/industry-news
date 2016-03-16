@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render "layouts/header" %>
+  <header>
+    <h1>Daily Cannibus</h1>
+  </header>
 
   <div class="messages">
     <% flash.each do |type, message| %>
@@ -17,5 +19,11 @@
 
 <%= yield %>
 
+  <footer>
+    <div class="social-media">
+      <button type="button" name="facebook"></button>
+      <button type="button" name="twitter"></button>
+    </div>
+  </footer>
 </body>
 </html>
