@@ -3,6 +3,7 @@ class NewsletterMailer < ActionMailer::Base
 
   def mail_newsletter(contact_list, newsletter = Newsletter.current)
     @newsletter = newsletter
+    @articles = @newsletter.articles_to_send.map { |article_id| Article.find(article_id) }
     puts "Sending emails."
     contact_emails = contact_list.map { |contact| contact.email }
     mail(

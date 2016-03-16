@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def admin?
-    user.role == 'admin'
+    role == 'admin'
   end
 end
