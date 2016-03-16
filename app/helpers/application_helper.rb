@@ -1,5 +1,6 @@
 module ApplicationHelper
   def markdown(text)
+    return nil unless text.present?
     options = {
       filter_html:     true,
       hard_wrap:       true,
