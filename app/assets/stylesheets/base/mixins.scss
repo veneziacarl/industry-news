@@ -1,0 +1,12 @@
+@mixin content-container {
+  margin: 0 auto;
+  padding-left: 4vmin;
+  padding-right: 4vmin;
+  max-width: 1440px;
+}
+
+@mixin col-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

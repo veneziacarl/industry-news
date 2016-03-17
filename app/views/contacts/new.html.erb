@@ -1,12 +1,16 @@
-Add to Mailing List
-
-<%= form_for @contact do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
+<section class="subscribe">
+  <div class="mail-graphic-wrapper">
+    <div class="mail-graphic-content">
+      <%= image_tag("mail-news.png", class: "mail-news") %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Add Me!" %>
+  <div class="sign-up-wrapper">
+    <div class="sign-up-content">
+      <h3 class="evolving-hook">THE CANNABIS INDUSTRY IS EVOLVING</h3>
+      <h1 class="help-hook">WE CAN HELP</h1>
+      <span class="get-started-hook">No sign up required, get started with your email</span>
+      <%= render "contacts/email" %>
+    </div>
   </div>
-<% end %>
+</section>

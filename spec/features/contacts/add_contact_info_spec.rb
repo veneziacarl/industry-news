@@ -16,7 +16,7 @@ feature 'add contact info', %{
   scenario 'a new and valid email is entered' do
     visit root_path
     fill_in 'Email', with: 'signup@test.com'
-    click_button 'Add Me!'
+    click_button 'Subscribe'
 
     expect(page).to have_content('Your email signup@test.com has been successfully added to the list!')
   end
@@ -24,7 +24,7 @@ feature 'add contact info', %{
   scenario 'an invalid email is supplied' do
     visit root_path
     fill_in 'Email', with: 'asdf'
-    click_button 'Add Me!'
+    click_button 'Subscribe'
 
     expect(page).to have_content('You have entered an invalid email address!')
     expect(page).to_not have_content('Your email signup@test.com has been successfully added to the list!')
@@ -33,7 +33,7 @@ feature 'add contact info', %{
   scenario 'an already authenticated user cannot re-sign in' do
     visit root_path
     fill_in 'Email', with: contact.email
-    click_button 'Add Me!'
+    click_button 'Subscribe'
 
     expect(page).to have_content('Your email is already on our mailing list!')
     expect(page).to_not have_content('Your email signup@test.com has been successfully added to the list!')

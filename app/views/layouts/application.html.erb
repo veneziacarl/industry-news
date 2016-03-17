@@ -5,24 +5,25 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <header>
-    <h1>Daily Cannibus</h1>
+    <h1 class="main-logo">Daily Cannibus</h1>
   </header>
-
   <div class="messages">
     <% flash.each do |type, message| %>
       <%= message %>
     <% end %>
   </div>
 
-<%= yield %>
+  <%= yield %>
 
   <footer>
     <div class="social-media">
-      <button type="button" name="facebook"></button>
-      <button type="button" name="twitter"></button>
+      <button type="button" name="facebook">f</button>
+      <button type="button" name="twitter">t</button>
+      <button type="button" name="instagram">i</button>
     </div>
   </footer>
 </body>

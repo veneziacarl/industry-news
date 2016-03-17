@@ -1,0 +1,82 @@
+$hook-margin: 1rem;
+
+.mail-graphic-wrapper {
+  background: $gray;
+}
+
+.mail-graphic-content {
+  @include content-container;
+}
+
+.mail-news {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 4vmin;
+  padding-bottom: 4vmin;
+  width: 92vmin;
+}
+
+.sign-up-content {
+  @include content-container;
+  @include col-flex;
+  margin-top: $hook-margin * 1.3;
+}
+
+.evolving-hook {
+  border: 1px solid red;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.help-hook {
+  border: 1px solid red;
+  color: $main-purple;
+  font-size: 1.714rem; //24px in most browsers
+  font-weight: 700;
+  margin: $hook-margin 0 0;
+}
+
+.get-started-hook {
+  border: 1px solid red;
+  font-weight: 700;
+  margin-top: $hook-margin;
+}
+
+.new_contact {
+  @include col-flex;
+  margin-top: $hook-margin;
+}
+
+.email-container {
+  label {
+    display: none;
+  }
+}
+
+.email-input {
+  border: 2px solid $main-purple;
+  box-shadow: inset 0 0 2px 1px $main-purple;
+  height: 2rem;
+  text-align: center;
+  width: 15rem;
+}
+
+.subscribe-button {
+  border: none;
+  background: $main-purple;
+  color: white;
+  margin-top: $hook-margin;
+  padding: 0.5rem 0.75rem;
+}
+
+.pitch-container {
+  @include content-container;
+  @include col-flex;
+  border: 1px solid red;
+  margin-top: $hook-margin;
+}
+
+.pitch {
+  font-size: 0.857rem; //12px in most browsers
+}
