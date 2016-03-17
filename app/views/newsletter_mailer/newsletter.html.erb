@@ -1,9 +1,9 @@
 <%= @newsletter.title %>
 <br>
-<%= @newsletter.description %>
+<%= markdown(@newsletter.description) %>
 
 <% @newsletter.reload.articles.each do |article| %>
   <%= article.title %> <br>
-  <%= article.url %> <br>
-  <%= article.description %> <br>
+  <%= link_to(article.url, target: "_blank" %> <br>
+  <%= markdown(article.description) %> <br>
 <% end %>

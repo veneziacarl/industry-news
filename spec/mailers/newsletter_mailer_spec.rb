@@ -25,8 +25,9 @@ RSpec.describe NewsletterMailer do
       expect(email).to have_subject("#{newsletter.title} - #{newsletter.newsletter_date}")
     end
 
-    it 'has the correct email body' do
-      expect(email).to have_body_text(newsletter.description)
+    it 'has the correct email body with markdown' do
+      expect(email).to have_body_text('newsletter description')
+      expect(email.body).to have_selector('em', text: 'bold')
 
       newsletter.reload
       newsletter_articles.each do |newsletter_article|
