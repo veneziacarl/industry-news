@@ -1,6 +1,8 @@
 class NewsletterMailer < ActionMailer::Base
   default from: "#{ENV['FROM_NAME']} <#{ENV['FROM_EMAIL']}>"
 
+  add_template_helper(ApplicationHelper)
+
   def mail_newsletter(contact_list, newsletter = Newsletter.current)
     @newsletter = newsletter
     @articles = @newsletter.articles_to_send.map { |article_id| Article.find(article_id) }

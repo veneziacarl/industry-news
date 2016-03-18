@@ -1,5 +1,5 @@
-<%= link_to(newsletter.newsletter_date, edit_newsletter_path(newsletter)) %>
+<%= link_to(newsletter.newsletter_date, edit_newsletter_path(newsletter), target: '_blank') %>
 <%= newsletter.title %>
-<%= newsletter.description %>
+<%= markdown(newsletter.description) %>
 
 <br />

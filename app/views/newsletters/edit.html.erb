@@ -12,8 +12,11 @@ newsletter show
   <br />
 
   <%= f.collection_check_boxes(:articles_to_send, @newsletter.newsletter_articles.order('id desc'), :id, :article_title) do |b| %>
-    <%= b.label { b.check_box + link_to(b.object.article.title, b.object.article.url) } %> <br />
+    <%= b.label { b.check_box + link_to(b.object.article.title, b.object.article.url, target: '_blank') } %> <br />
   <% end %>
 
   <%= f.submit 'Update' %>
 <% end %>
+
+
+<%= link_to 'Send Newsletter', newsletter_send_path(newsletter_id: @newsletter.id) %>

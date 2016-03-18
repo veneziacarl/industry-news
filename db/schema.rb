@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309055559) do
+ActiveRecord::Schema.define(version: 20160317060550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,10 +20,17 @@ ActiveRecord::Schema.define(version: 20160309055559) do
     t.date     "article_date",       null: false
     t.string   "title",              null: false
     t.string   "url",                null: false
-    t.string   "description"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "newsletter_feed_id", null: false
+    t.text     "description"
+    t.integer  "category_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -35,11 +42,11 @@ ActiveRecord::Schema.define(version: 20160309055559) do
   add_index "contacts", ["email"], name: "index_contacts_on_email", unique: true, using: :btree
 
   create_table "newsletter_articles", force: :cascade do |t|
-    t.integer  "newsletter_id",                  null: false
-    t.integer  "article_id",                     null: false
-    t.string   "send_article",  default: "true", null: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.integer  "newsletter_id",                   null: false
+    t.integer  "article_id",                      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "send_article",  default: "false", null: false
   end
 
   create_table "newsletter_feeds", force: :cascade do |t|
@@ -52,9 +59,9 @@ ActiveRecord::Schema.define(version: 20160309055559) do
   create_table "newsletters", force: :cascade do |t|
     t.date     "newsletter_date", null: false
     t.string   "title",           null: false
-    t.string   "description"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.text     "description"
   end
 
   create_table "users", force: :cascade do |t|

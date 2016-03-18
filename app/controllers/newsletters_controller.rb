@@ -39,6 +39,25 @@ class NewslettersController < ApplicationController
     end
   end
 
+  def send_newsletter
+    gibbon = Gibbon::Request.new(api_key: ENV['MAILCHIMP_API_KEY'])
+
+    @newsletter = Newsletter.find(params[:newsletter_id])
+    @articles = @newsletter.articles_to_send.map { |article_id| Article.find(article_id) }
+
+    body_content = render_to_string(partial: 'newsletter_mailer/newsletter', locals: { newsletter: @newsletter, articles: @articles })
+
+    mailchimp_campaign = MailchimpCampaign.new(ENV['MAILCHIMP_LIST_ID'], @newsletter, body_content)
+    campaign = mailchimp_campaign.create
+
+    mailchimp_campaign.add_body_to_campaign(campaign['id'])
+
+    gibbon.campaigns(campaign['id']).actions.send.create
+
+    flash[:notice] = 'think it worked...'
+    redirect_to :back
+  end
+
   private
 
   def newsletter_params
