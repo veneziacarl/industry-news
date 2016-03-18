@@ -27,6 +27,7 @@ gem 'webmock'
 
 gem 'gibbon'
 gem 'redcarpet'
+gem 'sucker_punch', '~> 2.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -53,6 +54,7 @@ group :test do
   gem 'launchy', require: false
   gem 'email_spec'
   gem 'database_cleaner'
+  gem 'test_after_commit'
 end
 
 group :production do

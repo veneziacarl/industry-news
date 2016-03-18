@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
 
   resources :newsletters, only: [:index, :edit, :update]
+
+  get '/newsletter_send', to: 'newsletters#send_newsletter'
 end

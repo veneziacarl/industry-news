@@ -17,3 +17,6 @@ newsletter show
 
   <%= f.submit 'Update' %>
 <% end %>
+
+
+<%= link_to 'Send Newsletter', newsletter_send_path(newsletter_id: @newsletter.id) %>
