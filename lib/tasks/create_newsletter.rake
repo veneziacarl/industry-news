@@ -24,15 +24,15 @@ def pull_news(date, newsletter)
         if feed.url.match(/feedburner/)
           if item.date == nil
             if item.dc_date >= date
-              article = Article.find_or_create_by(article_date: date, title: item.title, url: item.link, newsletter_feed: feed)
+              article = Article.find_or_create_by!(article_date: date, title: item.title, url: item.link, newsletter_feed: feed)
             end
           elsif item.date >= date
-            article = Article.find_or_create_by(article_date: date, title: item.title, url: item.link, description: item.description, newsletter_feed: feed)
+            article = Article.find_or_create_by!(article_date: date, title: item.title, url: item.link, description: item.description, newsletter_feed: feed)
           end
         elsif item.date >= date
-          article = Article.find_or_create_by(article_date: date, title: item.title, url: item.link, description: item.description, newsletter_feed: feed)
+          article = Article.find_or_create_by!(article_date: date, title: item.title, url: item.link, description: item.description, newsletter_feed: feed)
         end
-        NewsletterArticle.find_or_create_by(newsletter: newsletter, article: article)
+        NewsletterArticle.find_or_create_by!(newsletter: newsletter, article: article)
       end
       puts feed.id
     rescue

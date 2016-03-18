@@ -47,7 +47,7 @@ class NewslettersController < ApplicationController
 
     body_content = render_to_string(partial: 'newsletter_mailer/newsletter', locals: { newsletter: @newsletter, articles: @articles })
 
-    mailchimp_campaign = MailchimpCampaign.new(ENV['MAILCHIMP_LIST_ID'], body_content)
+    mailchimp_campaign = MailchimpCampaign.new(ENV['MAILCHIMP_LIST_ID'], @newsletter, body_content)
     campaign = mailchimp_campaign.create
 
     mailchimp_campaign.add_body_to_campaign(campaign['id'])

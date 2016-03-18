@@ -1,6 +1,7 @@
 class MailchimpCampaign
-  def initialize(list_id, body_content)
+  def initialize(list_id, newsletter, body_content)
     @list_id = list_id
+    @newsletter = newsletter
     @body_content = body_content
     @gibbon = Gibbon::Request.new(api_key: ENV['MAILCHIMP_API_KEY'])
   end
