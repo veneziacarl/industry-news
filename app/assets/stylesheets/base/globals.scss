@@ -1,0 +1,70 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic,900,900italic,300,300italic|Comfortaa:400,700,300);
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $white;
+  color: $black;
+  font-family: 'Lato', sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+header {
+  background-color: $main-purple;
+  height: 40px;
+}
+
+p {
+  font-size: 3.5vmin;
+  text-align: center;
+}
+
+.main-logo {
+  color: $white;
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.714rem; //24px in most browsers
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.footer-container {
+  @include content-container;
+  @include col-flex;
+  padding: 4vmin 0;
+}
+
+.social-media {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 3vmin;
+  width: 150px;
+
+  a {
+    height: 40px;
+    width: 40px
+  }
+}
+
+.facebook {
+  @include background-img-cover("facebook.png");
+}
+
+.twitter {
+  @include background-img-cover("twitter.png");
+}
+
+.instagram {
+  @include background-img-cover("instagram.png");
+}

@@ -1,0 +1,156 @@
+.mail-graphic-wrapper {
+  background: $gray;
+}
+
+.mail-graphic-content {
+  @include content-container;
+}
+
+.mail-news {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 4vmin;
+  padding-bottom: 4vmin;
+  width: 92vmin;
+  max-width: 100%;
+}
+
+.sign-up-content {
+  @include content-container;
+  @include col-flex;
+  margin-top: 4vmin;
+}
+
+.hook {
+  font-size: 4vmin;
+  font-weight: 700;
+  margin-bottom: $hook-margin;
+  text-align: center;
+}
+
+.big-hook {
+  color: $main-purple;
+  font-size: 7.5vmin;
+  font-weight: 700;
+  margin: 0 0 $hook-margin;
+}
+
+.get-started-hook {
+  font-weight: 700;
+  margin-top: $hook-margin;
+}
+
+.new_contact {
+  @include col-flex;
+}
+
+.email-container {
+  label {
+    display: none;
+  }
+}
+
+.email-input {
+  border: 0.4vmin solid $main-purple;
+  box-shadow: inset 0 0 2px 1px $main-purple;
+  height: 8vmin;
+  max-height: 3rem;
+  margin-bottom: $hook-margin;
+  text-align: center;
+  width: 50vmin;
+  max-width: 25rem;
+}
+
+.subscribe-button {
+  border: none;
+  background: $main-purple;
+  color: white;
+  font-size: 3vmin;
+  padding: 2vmin 3vmin;
+}
+
+.how-container {
+  @include content-container;
+  margin-top: 4.5vmin;
+
+  p {
+    margin-bottom: $hook-margin * .8125;
+  }
+}
+
+.steps-container {
+  @include content-container;
+  @include col-flex;
+  margin-top: 6vmin;
+}
+
+.step {
+  margin-bottom: 5vmin;
+  width: 80vmin;
+
+  img {
+    display: block;
+    height: auto;
+    margin: 0 auto 4vmin;
+    width: 100%;
+  }
+
+  span {
+    color: $splash-green;
+    padding-left: 5px;
+  }
+}
+
+.final-hook-wrapper {
+  background: $gray;
+  margin-top: 4vmin;
+  padding: 4vmin 0;
+}
+
+.final-hook {
+  @include content-container;
+  @include col-flex;
+}
+
+.subscribe-link {
+  color: $main-purple;
+  font-size: 4vmin;
+}
+
+@media screen and (min-width: 801px) {
+ .hook {
+   font-size: 1.75rem;
+ }
+
+ .help-hook {
+   font-size: 3rem;
+ }
+
+ .subscribe-button {
+   font-size: 1.5rem;
+   padding: 0.9rem 1.5rem;
+ }
+
+ p {
+   font-size: 1.5rem;
+ }
+}
+
+@media screen and (min-width: 1366px) {
+  .steps-container {
+    align-items: stretch;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1366px;
+  }
+
+  .step {
+    margin: 0 auto;
+    width: 22%;
+
+    p {
+      font-size: 1.15rem;
+    }
+  }
+}

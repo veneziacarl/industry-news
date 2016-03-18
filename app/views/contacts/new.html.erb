@@ -1,12 +1,56 @@
-Add to Mailing List
-
-<%= form_for @contact do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
+<section class="subscribe">
+  <div class="mail-graphic-wrapper">
+    <div class="mail-graphic-content">
+      <%= image_tag("mail-news.png", class: "mail-news") %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Add Me!" %>
+  <div class="sign-up-content">
+    <h3 class="hook">THE CANNABIS INDUSTRY IS EVOLVING</h3>
+    <h1 class="big-hook">WE CAN HELP</h1>
+    <span class="hook">No sign up required, get started with your email</span>
+    <%= render "contacts/email" %>
   </div>
-<% end %>
+</section>
+
+<div class="how-container">
+  <h3 class="hook">HOW IT WORKS:</h3>
+  <p>
+    It's our goal to keep you informed, so you can make smart investment decisions.
+  </p>
+</div>
+
+<div class="steps-container">
+  <div class="step">
+    <h3 class="hook">Step 1: <span>Collect</span></h3>
+    <%= image_tag("collect.png") %>
+    <p>
+      Each day, we gather industry news from dozens of cannabis sites
+    </p>
+  </div>
+  <div class="step">
+    <h3 class="hook">Step 2: <span>Select</span></h3>
+    <%= image_tag("select.png") %>
+    <p>
+      Our professionals curate a list of relavent articles that identify new products,
+      trends, and legal decisions.
+    </p>
+  </div>
+  <div class="step">
+    <h3 class="hook">Step 3: <span>Summarize</span></h3>
+    <%= image_tag("summarize.png") %>
+    <p>
+      Get caught up quicky with our daily industry summaries.
+    </p>
+  </div>
+</div>
+
+<div class="final-hook-wrapper">
+  <div class="final-hook">
+    <h1 class="big-hook">DON'T MISS OUT</h1>
+    <p class="hook">
+      Daily Cannabis is here to save you time, and it's easy to get started:
+    </p>
+    <a class="subscribe-link" href="#main-logo">SUBSCRIBE</a>
+  </div>
+</div>

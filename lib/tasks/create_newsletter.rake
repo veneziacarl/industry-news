@@ -20,6 +20,7 @@ def pull_news(date, newsletter)
   NewsletterFeed.all.each do |feed|
     begin
       rss = RSS::Parser.parse(feed.url, false)
+      binding.pry
       rss.items.each do |item|
         if feed.url.match(/feedburner/)
           if item.date == nil

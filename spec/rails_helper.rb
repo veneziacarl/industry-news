@@ -11,6 +11,7 @@ require 'capybara/rails'
 require 'valid_attribute'
 require 'factory_girl_rails'
 require 'webmock/rspec'
+require 'launchy'
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
