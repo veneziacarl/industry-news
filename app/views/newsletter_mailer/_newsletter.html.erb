@@ -4,6 +4,6 @@
 
 <% articles.each do |article| %>
   <%= article.title %> <br>
-  <%= link_to(article.url, target: "_blank") %> <br>
+  <%= link_to('Article Link', article.url, target: "_blank") %> <br>
   <%= markdown(article.description) %> <br>
 <% end %>
