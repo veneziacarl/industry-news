@@ -12,7 +12,7 @@ class MailchimpCampaign
     }
 
     settings = {
-      subject_line: "#{@newsletter.title} - #{@newsletter.newsletter_date}t",
+      subject_line: "#{@newsletter.title} - #{@newsletter.newsletter_date}",
       title: "Newsletter Campaign #{Date.today}",
       from_name: "#{ENV['FROM_NAME']}",
       reply_to: "#{ENV['FROM_EMAIL']}"
