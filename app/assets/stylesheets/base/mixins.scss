@@ -2,11 +2,17 @@
   margin: 0 auto;
   padding-left: 4vmin;
   padding-right: 4vmin;
-  max-width: 1440px;
+  max-width: 800px;
 }
 
 @mixin col-flex {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@mixin background-img-cover ($image) {
+  background-image: image-url($image);
+  background-repeat: no-repeat;
+  background-size: cover;
 }

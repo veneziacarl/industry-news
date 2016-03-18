@@ -9,7 +9,7 @@
 </head>
 <body>
   <header>
-    <h1 class="main-logo">Daily Cannibus</h1>
+    <h1 class="main-logo" id="main-logo">Daily Cannibus</h1>
   </header>
   <div class="messages">
     <% flash.each do |type, message| %>
@@ -20,10 +20,13 @@
   <%= yield %>
 
   <footer>
-    <div class="social-media">
-      <button type="button" name="facebook">f</button>
-      <button type="button" name="twitter">t</button>
-      <button type="button" name="instagram">i</button>
+    <div class="footer-container">
+      <div class="social-media">
+        <a class="facebook" href="#"></a>
+        <a class="twitter" href="#"></a>
+        <a class="instagram" href="#"></a>
+      </div>
+      <span class="copyright">Copyright 2016 Daily Cannabis</span>
     </div>
   </footer>
 </body>
