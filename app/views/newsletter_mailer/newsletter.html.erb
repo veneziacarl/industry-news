@@ -1,9 +1,36 @@
-<%= @newsletter.title %>
-<br>
-<%= markdown(@newsletter.description) %>
 
-<% @articles.each do |article| %>
-  <%= article.title %> <br>
-  <%= link_to('Article Link', article.url, target: "_blank") %> <br>
-  <%= markdown(article.description) %> <br>
-<% end %>
+
+<section class="newsletter-description-container">
+  <h1 class="newsletter-title"><%= @newsletter.title %></h1>
+  <h3 class="summary-header">The Big Picture</h3>
+  <div class="newsletter-description">
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      <%= markdown(@newsletter.description) %>
+    </p>
+  </div>
+</section>
+
+<section class="email-content-container">
+  <table>
+    <thead>
+      <tr>
+        <th class="table-title"><h3>Today's Articles</h3></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td>
+          <%= link_to("#{article.title}", article.url, target: "_blank") %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= markdown(article.description) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

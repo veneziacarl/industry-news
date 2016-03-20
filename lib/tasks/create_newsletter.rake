@@ -1,17 +1,16 @@
 require 'rss'
 
-num_time_outs = 0
-
 desc 'pull daily articles from feeds and make newsletter'
 task create_newsletter: :environment do
   yesterday = Date.today.prev_day
   newsletter = Newsletter.find_or_create_by(newsletter_date: yesterday, title: 'Default Title')
+  @num_time_outs = 0
   times_run = 0
   time_out_tolerance = 0.1
 
   begin
     pull_news(yesterday, newsletter)
-    time_out_percentage = num_time_outs / NewsletterFeed.count.to_f
+    time_out_percentage = @num_time_outs / NewsletterFeed.count.to_f
     times_run += 1
   end while time_out_percentage > time_out_tolerance && times_run < 3
 end
@@ -20,7 +19,6 @@ def pull_news(date, newsletter)
   NewsletterFeed.all.each do |feed|
     begin
       rss = RSS::Parser.parse(feed.url, false)
-      binding.pry
       rss.items.each do |item|
         if feed.url.match(/feedburner/)
           if item.date == nil
@@ -38,7 +36,7 @@ def pull_news(date, newsletter)
       puts feed.id
     rescue
       puts "#{feed.id} timed out!"
-      num_time_outs += 1
+      @num_time_outs += 1
       next
     end
   end

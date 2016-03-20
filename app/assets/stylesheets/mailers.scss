@@ -1,0 +1,28 @@
+.newsletter-description-container {
+  @include content-container;
+  @include col-flex;
+  margin-bottom: 30px;
+}
+
+.summary-header {
+  margin-bottom: 15px;
+}
+
+.newsletter-description {
+  p {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    text-align: justify;
+  }
+}
+
+.email-content-container {
+  @include content-container;
+  @include col-flex;
+
+  th,
+  td {
+    padding: 5px 0;
+    text-align: center;
+  }
+}

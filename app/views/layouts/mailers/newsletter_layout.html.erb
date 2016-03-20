@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daily Cannabis News</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <h1 class="main-logo" id="main-logo">Daily Cannabis News</h1>
+  </header>
+
+  <%= yield %>
+
+  <footer>
+    <div class="footer-container">
+      <div class="social-media">
+        <a class="facebook" href="https://www.facebook.com/profile.php?id=100011616335775" target="_blank"></a>
+        <a class="twitter" href="https://twitter.com/daily_canna" target="_blank"></a>
+        <a class="instagram" href="https://www.instagram.com/dailycannabisnews/" target="_blank"></a>
+      </div>
+      <span class="copyright">Copyright 2016 Daily Cannabis News</span>
+    </div>
+  </footer>
+</body>
+</html>
