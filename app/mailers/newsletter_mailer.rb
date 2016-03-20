@@ -1,5 +1,6 @@
 class NewsletterMailer < ActionMailer::Base
   default from: "#{ENV['FROM_NAME']} <#{ENV['FROM_EMAIL']}>"
+  layout 'mailers/newsletter_layout'
 
   add_template_helper(ApplicationHelper)
 

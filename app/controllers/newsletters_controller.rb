@@ -1,5 +1,5 @@
 class NewslettersController < ApplicationController
-  before_action :authorize_user, except: [:index]
+  #before_action :authorize_user, except: [:index]
 
   def index
     @newsletters = Newsletter.all.order('newsletter_date desc')
@@ -41,7 +41,6 @@ class NewslettersController < ApplicationController
 
   def send_newsletter
     gibbon = Gibbon::Request.new(api_key: ENV['MAILCHIMP_API_KEY'])
-
     @newsletter = Newsletter.find(params[:newsletter_id])
     @articles = @newsletter.articles_to_send.map { |article_id| Article.find(article_id) }
 
