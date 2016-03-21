@@ -15,7 +15,7 @@ feature 'add contact info', %{
 
   scenario 'a new and valid email is entered' do
     visit root_path
-    fill_in 'Email', with: 'signup@test.com'
+    fill_in 'email', with: 'signup@test.com'
     click_button 'Subscribe'
 
     expect(page).to have_content('Your email signup@test.com has been successfully added to the list!')

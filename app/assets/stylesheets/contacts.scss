@@ -137,6 +137,12 @@
  }
 }
 
+.messages {
+  text-align: center;
+  background: #009334;
+  color: white;
+}
+
 @media screen and (min-width: 1366px) {
   .steps-container {
     align-items: stretch;
