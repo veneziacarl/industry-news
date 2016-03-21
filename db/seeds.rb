@@ -25,7 +25,7 @@ end
 User.find_or_create_by(email: 'curator@admin.com') do |user|
   user.first_name = 'Curator'
   user.last_name = 'Admin'
-  user.password = 'Permacorp2!'
-  user.password_confirmation = 'Permacorp2!'
+  user.password = 'Permacorp2'
+  user.password_confirmation = 'Permacorp2'
   user.role = 'admin'
 end
