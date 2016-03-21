@@ -22,10 +22,10 @@ FEEDS.each do |feed|
   NewsletterFeed.find_or_create_by(feed_name: feed[:name], url: feed[:link])
 end
 
-User.find_or_create_by(email: 'user@example.com') do |user|
-  user.first_name = 'Test'
-  user.last_name = 'User'
-  user.password = 'password'
-  user.password_confirmation = 'password'
+User.find_or_create_by(email: 'curator@admin.com') do |user|
+  user.first_name = 'Curator'
+  user.last_name = 'Admin'
+  user.password = 'Permacorp2!'
+  user.password_confirmation = 'Permacorp2!'
   user.role = 'admin'
 end
