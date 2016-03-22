@@ -1,31 +1,35 @@
-<table>
-  <thead>
-    <tr>
-      <th><%= Date.today %></th>
-    </tr>
-  </thead>
+<table class="template">
   <tbody>
     <tr>
-      <td>
-        <h1>The Big Picture</h1>
+      <td class="header" style="background: #694198;height: 40px;">
+        <h1 class="main-logo" style="color: white;font-family: 'Comfortaa', cursive;font-size: 1.25rem;font-weight: 700;margin: 0;padding: 0;text-align: center;">Daily Cannabis News</h1>
       </td>
     </tr>
     <tr>
-      <td class="newsletter-description">
-        <%= markdown(@newsletter.description) %>
+      <td class="summary-container" style="background: #fff;line-height: 1.285rem;padding: 3% 5%;">
+        <h1>The Big Picture</h1>
+        <p>
+          <%= markdown(@newsletter.description) %>
+        </p>
       </td>
     </tr>
-    <% @articles.each do |article| %>
-      <tr>
-        <td>
-        <%= link_to("#{article.title}", article.url, target: "_blank") %>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <%= markdown(article.description) %>
-        </td>
-      </tr>
-    <% end %>
+    <tr>
+      <td class="article-container" style="background-color: #694198;background-image: url(/assets/mailer-background2.png);background-repeat: no-repeat;background-size: cover;color: #fff;line-height: 1.285rem;padding: 3% 5%;">
+        <h1>Must Read</h1>
+        <% @articles.each do |article| %>
+          <%= link_to("#{article.title}", article.url, target: "_blank") %>
+          <p>
+            <%= markdown(article.description) %>
+          </p>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td class="footer" style="background: #fff;height: 40px;text-align: center;">
+        <a class="social-link" href="https://www.facebook.com/profile.php?id=100011616335775" target="_blank" style="color: #694198;padding: 0 20px;">Facebook</a>
+        <a class="social-link" href="https://twitter.com/daily_canna" target="_blank" style="color: #694198;padding: 0 20px;">Twitter</a>
+        <a class="social-link" href="https://www.instagram.com/dailycannabisnews/" target="_blank" style="color: #694198;padding: 0 20px;">Instagram</a>
+      </td>
+    </tr>
   </tbody>
 </table>

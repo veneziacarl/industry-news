@@ -1,33 +1,111 @@
-<section class="newsletter-description-container">
-  <h1 class="newsletter-title"><%= @newsletter.title %></h1>
-  <h3 class="summary-header">The Big Picture</h3>
-  <div class="newsletter-description">
-    <p>
-      <%= markdown(@newsletter.description) %>
-    </p>
-  </div>
-</section>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Comfortaa:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa:400,700' rel='stylesheet' type='text/css'>
+    <title>Today's News</title>
+    <style type="text/css">
+      body {
+        background: #d4d4d4;
+        font-family: 'Lato', Helvetica, sans-serif;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
 
-<section class="email-content-container">
-  <table>
-    <thead>
-      <tr>
-        <th class="table-title"><h3>Today's Articles</h3></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @articles.each do |article| %>
-        <tr>
-          <td>
-          <%= link_to("#{article.title}", article.url, target: "_blank") %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <%= markdown(article.description) %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</section>
+      .wrapper {
+        margin: 0 auto;
+        padding: 0;
+        max-width: 600px;
+      }
+
+      .header {
+        background: #694198;
+        height: 40px;
+      }
+
+      .main-logo {
+        color: white;
+        font-family: 'Comfortaa', cursive;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      .summary-container {
+        background: #fff;
+        line-height: 1.285rem;
+        padding: 3% 5%;
+      }
+
+      .article-container {
+        background-color: #694198;
+        background-image: url("/assets/mailer-background2.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+        line-height: 1.285rem;
+        padding: 3% 5%;
+      }
+
+      .article-container a {
+        color: #fff;
+      }
+
+      .footer {
+        background: #fff;
+        height: 40px;
+        text-align: center;
+      }
+
+      .social-link {
+        color: #694198;
+        padding: 0 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <table class="template">
+        <tbody>
+          <tr>
+            <td class="header">
+              <h1 class="main-logo">Daily Cannabis News</h1>
+            </td>
+          </tr>
+          <tr>
+            <td class="summary-container">
+              <h1>The Big Picture</h1>
+              <p>
+                <%= markdown(@newsletter.description) %>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="article-container">
+              <h1>Must Read</h1>
+              <% @articles.each do |article| %>
+                <%= link_to("#{article.title}", article.url, target: "_blank") %>
+                <p>
+                  <%= markdown(article.description) %>
+                </p>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="footer">
+              <a class="social-link" href="https://www.facebook.com/profile.php?id=100011616335775" target="_blank">Facebook</a>
+              <a class="social-link" href="https://twitter.com/daily_canna" target="_blank">Twitter</a>
+              <a class="social-link" href="https://www.instagram.com/dailycannabisnews/" target="_blank">Instagram</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
