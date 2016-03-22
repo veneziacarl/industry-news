@@ -34,7 +34,7 @@ class MailchimpCampaign
   def make_body
     body = {
       template: {
-        id: 35085,
+        id: ENV['MAILCHIMP_TEMPLATE_ID'],
         sections: {
           "std_content00": @body_content
         }

@@ -2,20 +2,22 @@ require 'rss'
 
 desc 'pull daily articles from feeds and make newsletter'
 task create_newsletter: :environment do
-  yesterday = Date.today.prev_day
-  newsletter = Newsletter.find_or_create_by(newsletter_date: yesterday, title: 'Default Title')
+  today = Date.today
+  newsletter = Newsletter.find_or_create_by(newsletter_date: today, title: 'Default Title')
   @num_time_outs = 0
+  @articles_skipped = 0
   times_run = 0
   time_out_tolerance = 0.1
 
   begin
-    pull_news(yesterday, newsletter)
+    pull_news(today, newsletter)
     time_out_percentage = @num_time_outs / NewsletterFeed.count.to_f
     times_run += 1
   end while time_out_percentage > time_out_tolerance && times_run < 3
 end
 
 def pull_news(date, newsletter)
+  date = date.prev_day
   NewsletterFeed.all.each do |feed|
     begin
       rss = RSS::Parser.parse(feed.url, false)
@@ -31,7 +33,14 @@ def pull_news(date, newsletter)
         elsif item.date >= date
           article = Article.find_or_create_by!(article_date: date, title: item.title, url: item.link, description: item.description, newsletter_feed: feed)
         end
-        NewsletterArticle.find_or_create_by!(newsletter: newsletter, article: article)
+
+        if article.present?
+          NewsletterArticle.find_or_create_by!(newsletter: newsletter, article: article)
+        else
+          @articles_skipped += 1
+          puts "SKIPPED #{@articles_skipped}"
+          puts "SKIPPED #{item.date || item.dc_date}\n\n"
+        end
       end
       puts feed.id
     rescue
