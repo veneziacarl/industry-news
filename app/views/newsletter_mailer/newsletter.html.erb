@@ -53,7 +53,9 @@
       }
 
       .article-container a {
+        font-weight: bold;
         color: #fff;
+        line-height: 1.285rem;
       }
 
       .footer {
@@ -81,19 +83,17 @@
           <tr>
             <td class="summary-container">
               <h1>The Big Picture</h1>
-              <p>
-                <%= markdown(@newsletter.description) %>
-              </p>
+              <%= markdown(@newsletter.description) %>
             </td>
           </tr>
           <tr>
             <td class="article-container">
               <h1>Must Read</h1>
               <% @articles.each do |article| %>
-                <%= link_to("#{article.title}", article.url, target: "_blank") %>
-                <p>
-                  <%= markdown(article.description).truncate(140) %>
-                </p>
+                <div style="color: #fff; line-height: 1.285rem; margin-bottom: 30px;">
+                  <%= link_to("#{article.title}", article.url, target: "_blank") %>
+                  <%= sanitize markdown(article.description).truncate(140) %>
+                </div>
               <% end %>
             </td>
           </tr>
