@@ -43,8 +43,8 @@ def pull_news(date, newsletter)
         end
       end
       puts feed.id
-    rescue
-      puts "#{feed.id} timed out!"
+    rescue => e
+      puts "#{feed.id} threw #{e.class}"
       @num_time_outs += 1
       next
     end
