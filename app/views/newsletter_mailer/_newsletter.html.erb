@@ -17,7 +17,7 @@
       <h1 style="margin-bottom: 30px;">Best Articles</h1>
       <% @articles.each_with_index do |article, index| %>
         <div style="color: #fff; margin-bottom: 20px;">
-          <%= link_to("#{index}. #{article.title}", article.url, target: "_blank", style: "color: #fff; font-size: 16px; font-weight: bold; text-decoration: none") %>
+          <%= link_to("#{index + 1}.  #{article.title}", article.url, target: "_blank", style: "color: #fff; font-size: 16px; font-weight: bold; text-decoration: none") %>
         </div>
       <% end %>
     </td>
