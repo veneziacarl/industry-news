@@ -5,7 +5,7 @@
   </tr>
   <tr>
     <td class="summary-container" style="background: #fff;padding: 3% 5%; color: #000; font-size: 14px; line-height: 20px;">
-      <h1 style="font-size: 20px;">The Big Picture</h1>
+      <h1>The Big Picture</h1>
       <%= markdown(@newsletter.description) %>
     </td>
   </tr>
@@ -14,7 +14,7 @@
       <h1>Must Read</h1>
       <% @articles.each do |article| %>
         <div style="color: #fff; margin-bottom: 30px;">
-          <%= link_to("#{article.title}", article.url, target: "_blank", style: "font-weight: bold") %>
+          <%= link_to("#{article.title}", article.url, target: "_blank", style: "color: #fff; font-weight: bold") %>
           <% unless article.description.nil? %>
             <p style="line-height: 20px;">
               <%= sanitize article.description.truncate(140) %>
