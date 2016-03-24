@@ -1,26 +1,26 @@
   <tr>
     <td class="header" style="background: #694198;height: 40px;">
-      <h1 class="main-logo" style="color: white;font-family: cursive;font-size: 20px;font-weight: bold;margin: 0;padding: 0;text-align: center;">Daily Cannabis News</h1>
+      <h1 class="main-logo" style="color: #fff;font-family: 'Comfortaa', cursive;font-size: 20px;font-weight: bold;margin: 0;padding: 0;text-align: center;">Daily Cannabis News</h1>
     </td>
   </tr>
   <tr>
-    <td class="summary-container" style="background: #fff;padding: 3% 5%;">
-      <h1>The Big Picture</h1>
-      <p>
-        <%= @newsletter.description %>
-      </p>
+    <td class="summary-container" style="background: #fff;padding: 3% 5%; color: #000; font-size: 14px; line-height: 20px;">
+      <h1 style="font-size: 20px;">The Big Picture</h1>
+      <%= markdown(@newsletter.description) %>
     </td>
   </tr>
   <tr>
     <td class="article-container" style="background-color: #694198;color: #fff;padding: 3% 5%;">
       <h1>Must Read</h1>
       <% @articles.each do |article| %>
-        <%= link_to("#{article.title}", article.url, target: "_blank", style: "font-weight: bold") %>
-        <% unless article.description.nil? %>
-          <p>
-            <%= sanitize article.description.truncate(140) %>
-          </p>
-        <% end %>
+        <div style="color: #fff; margin-bottom: 30px;">
+          <%= link_to("#{article.title}", article.url, target: "_blank", style: "font-weight: bold") %>
+          <% unless article.description.nil? %>
+            <p style="line-height: 20px;">
+              <%= sanitize article.description.truncate(140) %>
+            </p>
+          <% end %>
+        </div>
       <% end %>
     </td>
   </tr>
