@@ -8,15 +8,15 @@ newsletter show
   <br />
 
   <%= f.label :description, 'Description' %>
-  <%= f.text_field :description %>
+  <%= f.text_area :description %>
   <br />
 
   <%= f.collection_check_boxes(:articles_to_send, @newsletter.newsletter_articles.order('id desc'), :id, :article_title) do |b| %>
     <%= b.label { b.check_box + link_to(b.object.article.title, b.object.article.url, target: '_blank') } %> <br />
   <% end %>
-
+<br />
   <%= f.submit 'Update' %>
 <% end %>
 
-
+<br />
 <%= link_to 'Send Newsletter', newsletter_send_path(newsletter_id: @newsletter.id) %>
