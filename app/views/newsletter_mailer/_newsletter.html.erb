@@ -2,7 +2,7 @@
   <tr>
     <td class="header" style="background: #694198;height: 40px;">
       <h1 class="main-logo" style="color: #fff;font-family: 'Comfortaa', Georgia, serif;font-size: 20px;font-weight: bold;margin: 0;padding: 0;text-align: center;">
-        <a href="http://dailycanabis.news" style="color: #fff;">Daily Cannabis News</a>
+        <a href="http://dailycanabis.news" style="color: #fff; text-decoration: none;">Daily Cannabis News</a>
       </h1>
     </td>
   </tr>
@@ -14,10 +14,10 @@
   </tr>
   <tr>
     <td class="article-container" style="background-color: #694198;color: #fff;padding: 3% 5%;">
-      <h1>Today's Best Articles</h1>
+      <h1 style="margin-bottom: 30px;">Best Articles</h1>
       <% @articles.each do |article| %>
-        <div style="color: #fff; margin-bottom: 30px;">
-          <%= link_to("#{article.title}", article.url, target: "_blank", style: "color: #fff; font-size: 16px; font-weight: bold") %>
+        <div style="color: #fff; margin-bottom: 20px;">
+          <%= link_to("#{article.title}", article.url, target: "_blank", style: "color: #fff; font-size: 16px; font-weight: bold; text-decoration: none") %>
         </div>
       <% end %>
     </td>
