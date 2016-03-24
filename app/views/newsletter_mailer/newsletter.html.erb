@@ -9,7 +9,9 @@
       body {
         background: #d4d4d4;
         font-family: 'Lato', Helvetica, sans-serif;
+        font-size: 14px;
         height: 100%;
+        line-height: 20px;
         margin: 0;
         padding: 0;
         width: 100%;
@@ -29,7 +31,7 @@
       .main-logo {
         color: white;
         font-family: 'Comfortaa', cursive;
-        font-size: 1.25rem;
+        font-size: 14px;
         font-weight: 700;
         margin: 0;
         padding: 0;
@@ -38,8 +40,10 @@
 
       .summary-container {
         background: #fff;
-        line-height: 1.285rem;
         padding: 3% 5%;
+      }
+
+      .summary-container p {
       }
 
       .article-container {
@@ -48,14 +52,16 @@
         background-repeat: no-repeat;
         background-size: cover;
         color: #fff;
-        line-height: 1.285rem;
         padding: 3% 5%;
       }
 
       .article-container a {
         font-weight: bold;
         color: #fff;
-        line-height: 1.285rem;
+      }
+
+      .article-container p {
+        color: #fff;
       }
 
       .footer {
@@ -83,17 +89,19 @@
           <tr>
             <td class="summary-container">
               <h1>The Big Picture</h1>
-              <%= markdown(@newsletter.description) %>
+              <p>
+                <%= @newsletter.description %>
+              </p>
             </td>
           </tr>
           <tr>
             <td class="article-container">
               <h1>Must Read</h1>
               <% @articles.each do |article| %>
-                <div style="color: #fff; line-height: 1.285rem; margin-bottom: 30px;">
-                  <%= link_to("#{article.title}", article.url, target: "_blank") %>
-                  <%= sanitize markdown(article.description).truncate(140) %>
-                </div>
+                <%= link_to("#{article.title}", article.url, target: "_blank") %>
+                <p>
+                  <%= sanitize article.description.truncate(140) %>
+                </p>
               <% end %>
             </td>
           </tr>
