@@ -16,7 +16,7 @@
         <div style="color: #fff; margin-bottom: 30px;">
           <%= link_to("#{article.title}", article.url, target: "_blank", style: "color: #fff; font-weight: bold") %>
           <% unless article.description.nil? %>
-            <p style="line-height: 20px;">
+            <p style="color: #fff; line-height: 20px;">
               <%= sanitize article.description.truncate(140) %>
             </p>
           <% end %>
