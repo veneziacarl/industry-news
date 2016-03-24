@@ -15,7 +15,19 @@ FEEDS = [
   { name: "Ganjapreneur", link: "http://www.ganjapreneur.com/feed/" },
   { name: "Cannabis-Chronicles", link: "http://cannabis-chronicles.com/feed/" },
   { name: "Cashinbis", link: "https://feeds.feedburner.com/cashinbis" },
-  { name: "Marijuana", link: "http://www.marijuana.com/feed/" }
+  { name: "Marijuana", link: "http://www.marijuana.com/feed/" },
+  { name: "Green Rush Daily", link: "https://feeds.feedburner.com/greenrushdaily/PjBE" },
+  { name: "Cannabis Business Executive", link: "http://www.cannabisbusinessexecutive.com/feed/" },
+  { name: "The Cannabist", link: "http://www.thecannabist.co/feed/" },
+  { name: "MJI News", link: "http://mjinews.com/feed/" },
+  { name: "Pot Stocks", link: "http://pot-stocks.com/feed/" },
+  { name: "Marijuana Index", link: "http://marijuanaindex.com/feed/" },
+  { name: "420 Magazine", link: "https://www.420magazine.com/feed/" },
+  { name: "Marijuana Politics", link: "http://marijuanapolitics.com/feed/" },
+  { name: "Cannabis Now Magazine", link: "http://cannabisnowmagazine.com/feed" },
+  { name: "Marijuana Times", link: "http://www.marijuanatimes.org/feed/" },
+  { name: "Cannabis Industry Journal", link: "http://www.cannabisindustryjournal.com/feed/" },
+  { name: "420 Intel", link: "http://420intel.com/rss.xml" }
 ]
 
 FEEDS.each do |feed|
