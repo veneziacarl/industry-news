@@ -2,21 +2,31 @@ newsletter show
 
 <br />
 
-<%= form_for(@newsletter) do |f| %>
-  <%= f.label :title, 'Title' %>
-  <%= f.text_field :title %>
-  <br />
+<div class="articles-list" style="margin-left: 50px;">
+  <%= form_for(@newsletter) do |f| %>
+    <%= f.label :title, 'Title' %>
+    <br />
+    <%= f.text_field :title %>
+    <br />
+    <br />
 
-  <%= f.label :description, 'Description' %>
-  <%= f.text_area :description %>
+    <%= f.label :description, 'Description' %>
+    <br />
+    <%= f.text_area :description %>
+    <br />
+    <br />
+    <%= f.collection_check_boxes(:articles_to_send, @newsletter.newsletter_articles.order('id desc'), :id, :article_title) do |b| %>
+      <%= b.label { b.check_box + link_to("#{b.object.article.article_date} <> #{b.object.article.title}", b.object.article.url, target: '_blank') } %> <br />
+      <br />
+    <% end %>
   <br />
-
-  <%= f.collection_check_boxes(:articles_to_send, @newsletter.newsletter_articles.order('id desc'), :id, :article_title) do |b| %>
-    <%= b.label { b.check_box + link_to(b.object.article.title, b.object.article.url, target: '_blank') } %> <br />
+    <%= f.submit 'Update' %>
   <% end %>
-<br />
-  <%= f.submit 'Update' %>
-<% end %>
+</div>
 
 <br />
-<%= link_to 'Send Newsletter', newsletter_send_path(newsletter_id: @newsletter.id) %>
+<div class="send-it" style="border: solid 1px black; text-align: center;">
+  <h2>
+  <%= link_to 'Send Newsletter', newsletter_send_path(newsletter_id: @newsletter.id) %>
+  </h2>
+</div>
