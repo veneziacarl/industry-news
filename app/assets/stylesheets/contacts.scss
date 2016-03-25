@@ -31,9 +31,10 @@
 
 .big-hook {
   color: $main-purple;
-  font-size: 7.5vmin;
+  font-size: 6vmin;
   font-weight: 700;
   margin: 0 0 $hook-margin;
+  text-align: center;
 }
 
 .get-started-hook {
@@ -120,7 +121,7 @@
 
 @media screen and (min-width: 801px) {
  .hook {
-   font-size: 1.75rem;
+   font-size: 1.4rem;
  }
 
  .help-hook {

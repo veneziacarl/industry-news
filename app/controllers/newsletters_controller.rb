@@ -1,5 +1,5 @@
 class NewslettersController < ApplicationController
-  #before_action :authorize_user, except: [:index]
+  before_action :authorize_user
 
   def index
     @newsletters = Newsletter.all.order('newsletter_date desc')
