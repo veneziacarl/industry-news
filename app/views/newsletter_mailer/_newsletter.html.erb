@@ -13,15 +13,16 @@
     </td>
   </tr>
   <tr>
-    <td class="article-container" style="background-color: #694198;color: #fff;padding: 3% 5%;">
-      <h1 style="margin-bottom: 30px;">Best Articles</h1>
+    <td class="article-container" style="padding: 3% 5%;">
+      <h1 style="background-color: #694198; color: #fff; margin-bottom: 30px;">Best Articles</h1>
       <% @articles.each_with_index do |article, index| %>
-        <div style="color: #fff; margin-bottom: 20px;">
+        <div style="color: #694198; margin-bottom: 20px;">
           <%= link_to("#{index + 1}.  #{article.title}", article.url, target: "_blank", style: "color: #fff; font-size: 16px; font-weight: bold; text-decoration: none") %>
         </div>
       <% end %>
     </td>
   </tr>
+  <hr>
   <tr>
     <td class="summary-container" style="background: #fff;padding: 3% 5%; color: #000; font-size: 14px; line-height: 20px;">
       <h3>How can we improve?</h3>
