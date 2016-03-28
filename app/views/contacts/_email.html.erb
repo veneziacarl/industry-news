@@ -1,16 +1,9 @@
 <%= form_for @contact do |f| %>
   <div class="email-container">
     <%= f.label :email %>
-    <%= f.email_field :email, placeholder: "enter your email here", class: "email-input", id: "email-input" %> <br />
+    <%= f.email_field :email, placeholder: "enter your email here", class: "email-input", id: "email-input" %>
   </div>
-  <div class="options-container">
-    <p>I am interested in...</p>
-    <%= f.label "Daily Briefings" %>
-    <%= f.check_box :daily_news %>
-    <%= f.label "Weekly Recaps" %>
-    <%= f.check_box :weekly_news %>
-  </div>
-  <br />
+
   <div class="actions">
     <%= f.submit "Subscribe", class: "subscribe-button" %>
   </div>

@@ -9,7 +9,6 @@ class MailchimpCampaign
   def create
     recipients = {
       list_id: @list_id,
-      segment_opts: {match: "Daily Updates"},
     }
 
     settings = {
